@@ -1,9 +1,25 @@
 # Getting Started
 
- - Enable local service: postgresql-x64 in Task Manager
- - Create new PostgreSQL DB connection at "localhost:5432" with username: postgres and password: admin
- - Create new DB table "demo"
- - Run SpringBoot project by Maven command: mvn spring-boot:run
+- (Windows) Make sure the local service: `postgresql-x64` is enabled in the Task Manager
+- Create new PostgreSQL DB connection at 
+ > localhost:5432
+
+   with username: `postgres` and password: `admin`
+- Create new DB table `demo`
+- Run SpringBoot project by Maven command: 
+> $ mvn spring-boot:run
+
+- Access the index web page by URL:
+> http://localhost:8080
+
+or
+> http://localhost:8080/index
+
+- In case of project not being closed properly (`Port 8080 already in use`), use the following command to terminate the process in Windows:
+> $ netstat -ano | findstr 8080
+
+> $ taskkill /F /pid xxxx
+ 
 
 ### Reference Documentation
 For further reference, please consider the following sections:
