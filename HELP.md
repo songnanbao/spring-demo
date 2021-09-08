@@ -10,16 +10,28 @@
 > $ mvn spring-boot:run
 
 - Access the index web page by URL:
-> http://localhost:8080
+> http://localhost
 
 or
-> http://localhost:8080/index
+> http://localhost/index
 
 - In case of project not being closed properly (`Port 8080 already in use`), use the following command to terminate the process in Windows:
-> $ netstat -ano | findstr 8080
+> $ netstat -ano | findstr 80
 
 > $ taskkill /F /pid xxxx
  
+## Endpoint Examples:
+
+### Student
+> POST http://localhost/student/
+
+Headers:
+`Content-Type`: `application/json`
+
+Body:
+```json
+{ "firstname":"AAA", "lastname":"BBB", "sex":0 }
+```
 
 ### Reference Documentation
 For further reference, please consider the following sections:
