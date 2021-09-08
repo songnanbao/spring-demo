@@ -9,11 +9,9 @@
 - Run SpringBoot project by Maven command: 
 > $ mvn spring-boot:run
 
-- Access the index web page by URL:
+- Access the Swagger page by URL:
 > http://localhost
 
-or
-> http://localhost/index
 
 - In case of project not being closed properly (`Port 8080 already in use`), use the following command to terminate the process in Windows:
 > $ netstat -ano | findstr 80
