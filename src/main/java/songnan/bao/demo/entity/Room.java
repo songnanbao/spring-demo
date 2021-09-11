@@ -6,39 +6,33 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.io.Serializable;
 import java.util.List;
 
-@Entity(name = "t_teacher")
+@Entity(name = "t_room")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Teacher implements Serializable {
-
+public class Room {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     @Column
-    private String firstname;
+    private String name;
 
     @Column
-    private String lastname;
+    private String description;
 
-    @Column
-    private int sex;
-
-    @OneToMany(mappedBy = "teacher")
+    @ManyToMany(mappedBy = "rooms")
     private List<Course> courses;
 
     @Override
     public String toString() {
-        return "Teacher{" +
+        return "Room{" +
                 "id=" + id +
-                ", firstname='" + firstname + '\'' +
-                ", lastname='" + lastname + '\'' +
-                ", sex=" + sex +
+                ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
                 ", courses=" + courses +
                 '}';
     }

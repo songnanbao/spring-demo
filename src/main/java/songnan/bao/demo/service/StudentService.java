@@ -25,6 +25,10 @@ public class StudentService {
         return null;
     }
 
+    public List<Student> findByFirstname(String firstname) {
+        return studentRepo.findByFirstname(firstname);
+    }
+
     public List<Student> getAll() {
         return studentRepo.findAll();
     }

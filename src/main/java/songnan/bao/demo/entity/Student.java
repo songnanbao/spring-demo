@@ -7,9 +7,9 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
-@Entity
-@Table
+@Entity(name = "t_student")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -17,7 +17,7 @@ import java.io.Serializable;
 public class Student implements Serializable {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     @Column
@@ -29,6 +29,9 @@ public class Student implements Serializable {
     @Column
     private int sex;
 
+    @ManyToMany(mappedBy = "students")
+    private List<Course> courses;
+
     @Override
     public String toString() {
         return "Student{" +
@@ -36,6 +39,7 @@ public class Student implements Serializable {
                 ", firstname='" + firstname + '\'' +
                 ", lastname='" + lastname + '\'' +
                 ", sex=" + sex +
+                ", courses=" + courses +
                 '}';
     }
 }

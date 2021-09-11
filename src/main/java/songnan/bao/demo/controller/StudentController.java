@@ -31,6 +31,13 @@ public class StudentController {
         return ResponseEntity.ok().body(studentService.getById(id));
     }
 
+    @ApiOperation("Find one Student by Firstname")
+    @GetMapping(value = "/byFirstname/{firstname}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
+    public ResponseEntity<?> getStudentByFirstname(@PathVariable String firstname) {
+        return ResponseEntity.ok().body(studentService.findByFirstname(firstname));
+    }
+
     @ApiOperation(value = "Save or update one Student", notes = "Save or update one Student by JSON input")
     @PostMapping(value = "/", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
