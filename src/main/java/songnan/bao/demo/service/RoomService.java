@@ -7,9 +7,11 @@ import org.springframework.stereotype.Service;
 import songnan.bao.demo.entity.Room;
 import songnan.bao.demo.resposiitory.RoomRepo;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
+@Transactional
 public class RoomService {
     private static final Logger LOG = LogManager.getLogger(RoomService.class);
 

@@ -18,21 +18,18 @@ public class CourseController {
 
     @ApiOperation("Get all Courses")
     @GetMapping(value = "", produces = MediaType.APPLICATION_JSON_VALUE)
-    @ResponseBody
     public ResponseEntity<?> getAllCourses() {
         return ResponseEntity.ok().body(courseService.getAll());
     }
 
     @ApiOperation("Get one Course by ID")
     @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    @ResponseBody
     public ResponseEntity<?> getCourseById(@PathVariable int id) {
         return ResponseEntity.ok().body(courseService.getById(id));
     }
 
     @ApiOperation("Save or update one Course by JSON input")
     @PostMapping(value = "/", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
-    @ResponseBody
     public ResponseEntity<?> save(@RequestBody Course course) {
         return ResponseEntity.ok().body(courseService.save(course));
     }

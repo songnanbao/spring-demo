@@ -7,9 +7,11 @@ import org.springframework.stereotype.Service;
 import songnan.bao.demo.entity.Teacher;
 import songnan.bao.demo.resposiitory.TeacherRepo;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
+@Transactional
 public class TeacherService {
     private static final Logger LOG = LogManager.getLogger(TeacherService.class);
 

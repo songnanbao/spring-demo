@@ -18,21 +18,18 @@ public class RoomController {
 
     @ApiOperation("Get all Rooms")
     @GetMapping(value = "", produces = MediaType.APPLICATION_JSON_VALUE)
-    @ResponseBody
     public ResponseEntity<?> getAllRooms() {
         return ResponseEntity.ok().body(roomService.getAll());
     }
 
     @ApiOperation("Get one Room by ID")
     @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    @ResponseBody
     public ResponseEntity<?> getRoomById(@PathVariable int id) {
         return ResponseEntity.ok().body(roomService.getById(id));
     }
 
     @ApiOperation("Save or update one Room by JSON input")
     @PostMapping(value = "/", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
-    @ResponseBody
     public ResponseEntity<?> save(@RequestBody Room room) {
         return ResponseEntity.ok().body(roomService.save(room));
     }
